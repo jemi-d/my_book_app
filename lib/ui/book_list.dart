@@ -55,7 +55,7 @@ class _MyBookListPageState extends State<MyBookListPage> {
    final vm = Provider.of<BookViewModel>(context);
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Book List',style: TextStyle(fontSize: 22,fontFamily: "Outfit-Medium"),), backgroundColor: Colors.brown.shade300,centerTitle: true,
+      appBar: AppBar(title: const Text('All Books',style: TextStyle(fontSize: 22,fontFamily: "Outfit-Medium"),), backgroundColor: Colors.brown.shade300,centerTitle: true,
       actions: [
         favoriteIconWithBadge(vm.favorites.length),
       ]),
@@ -94,7 +94,7 @@ class _MyBookListPageState extends State<MyBookListPage> {
       child: Stack(clipBehavior: Clip.none,
         children: [
           IconButton(onPressed: (){
-            Navigator.push(context, MaterialPageRoute(builder: (_) => FavoriteBooksPage()),);
+            Navigator.pushNamed(context, '/favBook');
           }, icon: Icon(Icons.favorite_border,size: 30,)),        // Badge only if count > 0
           if (favCount > 0)
             Positioned(top: -2, right: -2,

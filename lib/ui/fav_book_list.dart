@@ -30,7 +30,20 @@ class _FavoriteBooksPageState extends State<FavoriteBooksPage> {
         return Scaffold(
             appBar: AppBar(title: const Text('Favorite Books',style: TextStyle(fontSize: 22,fontFamily: "Outfit-Medium")), backgroundColor: Colors.brown.shade300,centerTitle: true,),
           body: favorites.isEmpty
-              ? Center(child: Text("No favorites yet",style: TextStyle(fontSize: 18,color: Colors.red),))
+              ? Center(child: Column(crossAxisAlignment: CrossAxisAlignment.center,mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text("No favorites yet",style: TextStyle(fontSize: 18,color: Colors.red),),
+                  ElevatedButton(onPressed: (){
+                    Navigator.pushReplacementNamed(context, '/books');
+                  },
+                    style: ElevatedButton.styleFrom(backgroundColor: Colors.brown,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10), // Adjust corner radius
+                      ),
+                      elevation: 5, // Shadow effect
+                    ), child: Text("Go to All Books page",style: TextStyle(color: Colors.white),),),
+                ],
+              ))
               : ListView.builder(
             itemCount: favorites.length,
             itemBuilder: (context, index) {
