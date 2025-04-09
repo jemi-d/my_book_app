@@ -1,16 +1,31 @@
 # f_book
 
-A new Flutter project.
+A new My book application project.
 
-## Getting Started
+Setup instructions:
+The app have two list pages, All books and Favorite books.
+You can click all books button that navigates to My Books page, there the list of books fetched from the api.
+You can make the particular book as your favorite.
+The favorite books are listed in favorite books page.
+You can click the list card and view the particular book details.
+In the book list, you can do favorite/Un favorite.
 
-This project is a starting point for a Flutter application.
+Architecture Used:(MVVM)
+- Model
+Represents the data and business logic.Deals with APIs, databases, or local storage.
+Example: Book model, API service class, Drift database.
+- View
+The UI layer — what the user sees.Uses StatelessWidget or StatefulWidget.Displays data passed from the ViewModel.
+Reacts to changes via Provider, Consumer, etc.
+- ViewModel
+Acts as a bridge between View and Model.Holds app state, processes logic, and updates UI.
+Calls the Model to fetch/save data.Notifies the View when data changes (notifyListeners() in Provider).
 
-A few resources to get you started if this is your first Flutter project:
+Features Implemented:
+Mvvm architecture,
+Lazy loading,
+Provider - State management,
+Error handling, Network checking,
+CatchedNetworkImage - for load images & handle error image.
+Drift - for local storage (Only for favorite books list),
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
